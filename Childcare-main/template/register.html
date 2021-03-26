@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+  
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/bootstrap.min.css' %}">
+    <script scr='main.css'></script>
+    <title>Registration</title>
+   
+   
+    <style>
+
+        body {
+          background-image: url('{% static 'images/home_slider.jpeg' %}');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          
+        }
+       
+        </style>
+       
+       
+        <div align='center'>
+          <font size=150 style="font-family: monospace;" color='blue'> Child Registration</font> 
+        </div>
+    <form action="register" method="POST"> {% csrf_token %}
+        <div class='container'>
+         <table height=200px wight=200px align=center padding=500px >
+        
+            <tr>
+            <td><label for="First Name">First Name:</label></td>
+             <td><input type="text" name="first_name" placeholder="firstname" required="true" maxlength="50" size="30">
+            {{ form.first_name }}
+            </td></tr>
+             <tr>
+            <td>
+            <label for=" Last Name">Last Name:</label></td>
+            <td><input type="text" name="last_name" placeholder="lastname" required="true" maxlength="50" size="30">
+                {{ form.last_name }}
+            </td></tr>
+             <tr>
+             <td><label for="Date of Birth" >Date of Birth:</label></td>
+             <td><input type="date" maxlength="50" size="30" required="true" name="dob" placeholder="dob">
+                {{ form.dob }}
+            </td></tr>
+             <tr><td>
+             <label for="Phone Number" >Phone Number:</label></td>
+            <td><input type="text" name="phone" placeholder="phone" pattern="[0-9]{10}" maxlength="50" size="30" required="true">
+                {{ form.phone }}
+            </td></tr>
+            <tr><td><button>Submit</button></td></tr>
+           </table>
+        </div>
+    </form>
+    
+</body>
+</html>

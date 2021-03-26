@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+  
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/bootstrap.min.css' %}">
+    <script scr='main.css'></script>
+    <title>Registration</title>
+   
+   
+    <style>
+
+        body {
+          background-image: url('{% static 'images/home_slider.jpeg' %}');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          
+        }
+       
+        </style>
+       
+       
+        <div align='center'>
+          <font size=150 style="font-family: monospace;" color='blue'> Shedule Event</font> 
+        </div>
+    <form action="event" method="POST"> {% csrf_token %}
+        <div class='container'>
+         <table height=200px wight=200px align=center padding=500px >
+        
+            <tr>
+            <td><label for="event_name">Event Name </label></td>
+             <td><input type="text" name="event_name" placeholder="event_name" required="true" maxlength="50" size="30">
+            
+            </td></tr>
+             <tr>
+            <td>
+            <label for=" days">Days </label></td>
+            <td><input type="text" name="days" placeholder="days" required="true" maxlength="50" size="30">
+            
+            </td></tr>
+             <tr>
+             <td><label for="event_date" >Event Date</label></td>
+             <td><input type="date" maxlength="50" size="30" required="true" name="event_date" placeholder="event_date">
+                
+            </td></tr>
+             <tr><td>
+             <label for="msg" >Message to send</label></td>
+            <td><input type="text" name="msg" placeholder="msg"  maxlength="50" size="30" required="true">
+                
+            </td></tr>
+            <tr><td><button>Submit</button></td></tr>
+           </table>
+        </div>
+    </form>
+    
+</body>
+</html>
